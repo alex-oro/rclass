@@ -16,7 +16,7 @@ for (i in id) {
 nobs1<-rbind(nobs1, read.csv(files[i]))
 }
 nobs<-sum(complete.cases(nobs1))
-dat_subset<-nobs1[which(nobs1[, "id"]
-results<-data.frame(id,nobs)
+results<-data.frame(id = i , nobs = nobs)
 return(results)
 }
+#complete works with summing all completes but not displaying others
