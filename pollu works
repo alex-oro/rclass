@@ -8,3 +8,15 @@ pollutant[c("nitrate","sulfate")]
 dat_subset<-dat[which(dat[, "ID"] %in% id),]
 mean(dat_subset[, pollutant],na.rm=TRUE)
 }
+
+complete<-function(directory, id=1:332) {
+files<- list.files(directory, full.names=TRUE)
+nobs1<-data.frame()
+for (i in id) {
+nobs1<-rbind(nobs1, read.csv(files[i]))
+}
+nobs<-sum(complete.cases(nobs1))
+dat_subset<-nobs1[which(nobs1[, "id"]
+results<-data.frame(id,nobs)
+return(results)
+}
